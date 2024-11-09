@@ -1,0 +1,22 @@
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+      xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceBlock name="order_items">
+            <arguments>
+                <argument name="columns" xsi:type="array">
+                    <item name="is_sample" xsi:type="string" translate="true">Is Sample</item>
+                </argument>
+            </arguments>
+            <referenceBlock name="default_order_items_renderer">
+                <arguments>
+                    <argument name="columns" xsi:type="array">
+                        <item name="is_sample" xsi:type="string" translate="true">col-is-sample</item>
+                    </argument>
+                </arguments>
+            </referenceBlock>
+            <block class="Coditron\SampleProduct\Block\Adminhtml\Items\Column\SampleColumn"
+                   name="column_is_sample"
+                   template="Coditron_SampleProduct::items/column/sample_column.phtml" group="column" />
+        </referenceBlock>
+    </body>
+</page>

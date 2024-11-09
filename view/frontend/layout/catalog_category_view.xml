@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Coditron
+ *
+ * @category  Coditron
+ * @package   Coditron_SampleProduct
+ * @author    Coditron
+ * @copyright Copyright (c) Coditron (https://coditron.com)
+ */
+ -->
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceBlock name="category.products.list">
+            <action method="setBlockClassName">
+                <argument name="class" xsi:type="string">Coditron\SampleProduct\Block\Product\ListProduct</argument>
+            </action>
+            <action method="setTemplate">
+                <argument name="template" xsi:type="string">Coditron_SampleProduct::product/list.phtml</argument>
+            </action>
+        </referenceBlock>
+    </body>
+</page>

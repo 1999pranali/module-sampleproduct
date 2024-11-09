@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Coditron
+ *
+ * @category  Coditron
+ * @package   Coditron_SampleProduct
+ * @author    Coditron
+ * @copyright Copyright (c) Coditron (https://coditron.com)
+ */
+ -->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+	<preference for="Magento\Checkout\Controller\Cart\UpdatePost" type="Coditron\SampleProduct\Rewrite\Magento\Checkout\Controller\Cart\UpdatePost"/>
+    <type name="Magento\Checkout\Controller\Sidebar\UpdateItemQty">
+        <plugin name="sampleproduct_minicart_update_qty" type="Coditron\SampleProduct\Plugin\Checkout\Controller\Sidebar\UpdateItemQtyPlugin" sortOrder="10"/>
+    </type>
+</config>

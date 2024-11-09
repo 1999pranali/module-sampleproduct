@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Coditron
+ *
+ * @category  Coditron
+ * @package   Coditron_SampleProduct
+ * @author    Coditron
+ * @copyright Copyright (c) Coditron (https://coditron.com)
+ */
+ -->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:Menu/etc/menu.xsd">
+    <menu>
+        <add id="Coditron_SampleProduct::config_parent" title="Sample Product" module="Coditron_SampleProduct" sortOrder="100" resource="Coditron_SampleProduct::config"/>
+        <add id="Coditron_SampleProduct::config" title="Sample Product Configuration" module="Coditron_SampleProduct" sortOrder="10" parent="Coditron_SampleProduct::config_parent" action="adminhtml/system_config/edit/section/sampleproduct_config" resource="Coditron_SampleProduct::config"/>
+    </menu>
+</config>

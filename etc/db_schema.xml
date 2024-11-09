@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Coditron
+ *
+ * @category  Coditron
+ * @package   Coditron_SampleProduct
+ * @author    Coditron
+ * @copyright Copyright (c) Coditron (https://coditron.com)
+ */
+ -->
+<schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:Setup/Declaration/Schema/etc/schema.xsd">
+    <table name="sales_order" resource="sales">
+        <column xsi:type="int" name="contains_sample" nullable="false" default="0" comment="Contains Sample Product"/>
+    </table>
+</schema>

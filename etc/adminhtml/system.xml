@@ -1,0 +1,49 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Coditron
+ *
+ * @category  Coditron
+ * @package   Coditron_SampleProduct
+ * @author    Coditron
+ * @copyright Copyright (c) Coditron (https://coditron.com)
+ */
+ -->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config/etc/system_file.xsd">
+    <system>
+        <section id="sampleproduct_config" translate="label" type="text" sortOrder="100" showInDefault="1" showInWebsite="1" showInStore="1">
+            <label>Sample Product Settings</label>
+            <tab>general</tab>
+            <resource>Coditron_SampleProduct::config</resource>
+            <group id="general" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>General</label>
+                <field id="enable" translate="label" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Enable Sample Product</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="login_customer" translate="label comment" sortOrder="20" type="select" showInDefault="1" showInWebsite="1">
+                    <label>Allow to only Login Customer</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <depends>
+                        <field id="enable">1</field>
+                    </depends>
+                </field>
+                <field id="customer_group" translate="label" type="multiselect" sortOrder="30" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>Allowed Customer Group</label>
+                    <source_model>Coditron\SampleProduct\Model\Config\Source\CustomerGroup</source_model>
+                    <depends>
+                        <field id="enable">1</field>
+                    </depends>
+                </field>
+                 <field id="max_quantity" translate="label comment" type='text' sortOrder="40" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>Maximum allowed sample quantities to order</label>
+                    <comment>Customer can only order "Maximum allowed sample quantities"</comment>
+                    <depends>
+                        <field id="enable">1</field>
+                    </depends>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>

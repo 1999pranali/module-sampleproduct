@@ -1,0 +1,17 @@
+/**
+ * Coditron
+ *
+ * @category  Coditron
+ * @package   Coditron_SampleProduct
+ * @author    Coditron
+ * @copyright Copyright (c) Coditron (https://coditron.com)
+ */
+.sample-order-link {
+    padding: 10px;
+}
+
+button.action.primary.get-sample {
+    line-height: 2.2rem;
+    padding: 14px 70px;
+    font-size: 1.8rem;
+}

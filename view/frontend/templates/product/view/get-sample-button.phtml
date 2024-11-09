@@ -1,0 +1,43 @@
+<?php
+/**
+ * Coditron
+ *
+ * @category  Coditron
+ * @package   Coditron_SampleProduct
+ * @author    Coditron
+ * @copyright Copyright (c) Coditron (https://coditron.com)
+ */
+/** @var \Coditron\SampleProduct\Block\Product\View\AddToCartButton $block */
+$product = $block->getProduct();
+$productId = $product->getEntityId();
+$isSampleProduct = $product->getData('enable_sample');
+$isModuleEnable = $block->isModuleEnabled();
+$isAllowCustomerLogin = $block->isAllowCustomerLogin();
+$isLoggedIn = $block->isCustomerLoggedIn();
+$isCustomerGroupAllowed = $block->isCustomerGroupAllowed();
+$maxSampleQty = $block->maxOrderQty();
+$sampleProductSku = $product->getSku() . '-sample';
+$sampleProductId = $block->getSampleProductId($sampleProductSku);
+?>
+<?php if ($isModuleEnable && $isSampleProduct && (!$isAllowCustomerLogin || ($isAllowCustomerLogin && $isLoggedIn || $isCustomerGroupAllowed))): ?>
+    <div class="sample_product_container">
+        <div class="sample_product">
+            <h1><?php echo $block->getCustomAttributeByProductId($productId, 'sample_title'); ?></h1>
+            <h4>Price: <?php echo $block->formatPriceWithCurrency($block->getCustomAttributeByProductId($productId, 'sample_price')); ?></h4>
+        </div>
+        <button type="button" class="action primary get-sample" data-product-id="<?= $sampleProductId ?>">
+            Get Sample
+        </button>
+    </div>
+<?php endif; ?>
+<?php 
+if(isset($maxSampleQty)){
+?>
+    <script type="text/javascript">
+        window.sampleQtyConfig = {
+            maxSampleQty: <?php echo $maxSampleQty; ?>
+        };
+    </script>
+<?php
+}
+?>
